@@ -2,7 +2,7 @@ name: Update Profile
 
 on:
   schedule:
-    - cron: '17 7 * * *'
+    - cron: '0 16 * * *'
 
 jobs:
   build:
