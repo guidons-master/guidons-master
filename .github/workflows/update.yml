@@ -2,7 +2,7 @@ name: Update Profile
 
 on:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   build:
@@ -13,9 +13,10 @@ jobs:
 
     - name: Update README
       run: |
-        date=$(date +%Y%m%d%H%M%S)
-        sed -i "s|https://bing.img.run/uhd.php?time=[^\"]*|https://bing.img.run/uhd.php?time=$date|g" README.md
+        curl -o wallpaper.jpg https://bing.img.run/uhd.php
+        
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -am "Update README.md"
+
+        git commit -am "Update Wallpaper"
         git push
