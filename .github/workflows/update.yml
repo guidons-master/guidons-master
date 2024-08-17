@@ -2,7 +2,7 @@ name: Update Profile
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/10 * * * *'
 
 jobs:
   build:
@@ -18,9 +18,9 @@ jobs:
         mkdir -p images
         
         rm -f images/bing_*.jpg
-        
-        curl -o -k images/bing_$date.jpg https://bing.img.run/uhd.php
-        
+
+        wget --no-check-certificate -O images/bing_$date.jpg https://bing.img.run/uhd.php
+
         sed -i "s|images/.*.jpg|images/bing_$date.jpg|g" README.md
         
         git config --local user.email "action@github.com"
