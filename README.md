@@ -1,3 +1,3 @@
 <p align="center">
-    <img src="images/bing_20250129164226.jpg" />
+    <img src="images/bing_20250130164329.jpg" />
 </p>
